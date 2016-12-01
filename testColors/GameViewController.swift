@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+                scene.backgroundColor = randomBackgroundColor()
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -31,6 +31,27 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
+    
+    func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
+    
+    
+    func randomBackgroundColor() -> UIColor {
+        var randomRed = random()
+        var randomGreen = random()
+        var randomBlue = random()
+        print(randomRed)
+        print(randomGreen)
+        print(randomBlue)
+        
+        return UIColor(red:   randomRed,
+                       green: randomGreen,
+                       blue:  randomBlue,
+                       alpha: 1.0)
+        
+    }
+    
 
     override var shouldAutorotate: Bool {
         return true
