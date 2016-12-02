@@ -35,19 +35,30 @@ class GameViewController: UIViewController {
     func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
-    
+    var randomRed: CGFloat? = nil
+    var randomGreen: CGFloat? = nil
+    var randomBlue: CGFloat? = nil
     
     func randomBackgroundColor() -> UIColor {
-        var randomRed = random()
-        var randomGreen = random()
-        var randomBlue = random()
-        print(randomRed)
-        print(randomGreen)
-        print(randomBlue)
+        randomRed = random()
+        randomGreen = random()
+        randomBlue = random()
         
-        return UIColor(red:   randomRed,
-                       green: randomGreen,
-                       blue:  randomBlue,
+        let randomRedRounded = (ceil(randomRed! * 8) / 8)
+        let randomGreenRounded = (ceil(randomGreen! * 8) / 8)
+        let randomBlueRounded = (ceil(randomBlue! * 8) / 8)
+//        print(randomRed!)
+//        print(randomRedRounded)
+//        print(randomGreen!)
+//        print(randomGreenRounded)
+//        print(randomBlue!)
+        print(randomBlueRounded)
+        print(blueColorRounder)
+        
+        
+        return UIColor(red:   randomRedRounded,
+                       green: randomGreenRounded,
+                       blue:  randomBlueRounded,
                        alpha: 1.0)
         
     }
