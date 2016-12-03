@@ -15,7 +15,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     
     private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    
+    var scoreLabel : SKLabelNode!
+    var score: Int = 0
+
+    var timerLabel : SKLabelNode!
+    var timer: Int = 20
     
     let manager = CMMotionManager()
     var changingColorNode = SKSpriteNode()
@@ -27,6 +32,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var calibratedAcceleration = CMAcceleration()
     
     override func didMove(to view: SKView) {
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = "Score: \(score)"
+        scoreLabel.horizontalAlignmentMode = .right
+        scoreLabel.position = CGPoint(x: 15, y:15)
+        scoreLabel.zPosition = 1000
+        self.addChild(scoreLabel)
+        print(scoreLabel)
         setRandomBackgroundColor()
         moving()
  
@@ -61,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //        isColorTheSame()
         
         
-        var startColor =  UIColor(red:   randomRedRounded!,
+        let startColor =  UIColor(red:   randomRedRounded!,
                                   green: randomGreenRounded!,
                                   blue:  randomBlueRounded!,
                                   alpha: 1.0)
@@ -90,7 +102,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.numberFormatter.maximumFractionDigits = 3
         
         changingColorNode = childNode(withName: "changingColorNode") as! SKSpriteNode
-        //        changingColorNode.color = .black
         
         manager.startAccelerometerUpdates()
         manager.accelerometerUpdateInterval = 0.3
@@ -152,21 +163,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let redColorRounder = (ceil(redColor * 3) / 3)
         let greenColorRounder = (ceil(greenColor * 3) / 3)
         let blueColorRounder = (ceil(blueColor * 3) / 3)
-        
-//        print(redColor)
-//        print(redColorRounder)
-//        print(greenColor)
-//        print(greenColorRounder)
-//        print(blueColor)
-//        print(blueColorRounder)
-//
+
         let color = SKAction.colorize(with: UIColor(red:redColorRounder,
                                                     green: greenColorRounder,
                                                     blue: blueColorRounder,
                                                     alpha: 1),
                                       colorBlendFactor: 0.0, duration: 0.1)
-//        print(color)
-//        print("hI")
+
         changingColorNode.run(color)
         
         
@@ -174,46 +177,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                        green: greenColorRounder,
                        blue:  blueColorRounder,
                        alpha: 1.0)
-        
-//        print(changingColor)
+
         
         checkIfSame(changingNodeColor: changingColor)
         return changingColor
-        
-//        let redColorNumber = redColorRounder.description
-//        let greenColorNumber = greenColorRounder.description
-//        let blueColorNumber = blueColorRounder.description
-//        
-//        colorArray.insert(redColorNumber, at:0)
-//        colorArray.insert(greenColorNumber, at:1)
-//        colorArray.insert(blueColorNumber, at:2)
-////        print(colorArray)
 
-//        return colorArray
-        
-//        SKAction.animate(withDuration: self.motionManager.deviceMotionUpdateInterval, animations: { () -> Void in
-//            self.view?.backgroundColor = UIColor(red: CGFloat(abs(self.motionManager.deviceMotion!.gravity.x)), green: CGFloat(abs(self.motionManager.deviceMotion!.gravity.y)), blue: CGFloat(abs(self.motionManager.deviceMotion!.gravity.z)), alpha: 1)
         }
+    
+
     
     func checkIfSame(changingNodeColor: UIColor){
         if changingNodeColor == startColored {
             print (changingNodeColor)
             print(startColored!)
             print("FUCK YEEEAAAHHHHHHHHHHHHH")
-            
+            score += 1
+            scoreLabel.text = "Score: \(score)"
+//            incrementScore(score: score)
             setRandomBackgroundColor()
             
         }
 
         print("test")
-//        let startingBackgroundColor = GameViewController().saveBackgroundColor()
-//        if changingNodeColor == startingBackgroundColor {
-//            print(changingNodeColor)
-//            print(startingBackgroundColor)
-//            print("Hey MAMA")
-//        }
-//        print(startingBackgroundColor)
+
     }
+    
+    
+
     
     func doSomething(notification: Notification) {
         let newColor:UIColor = notification.userInfo!["bgcolor"] as! UIColor
