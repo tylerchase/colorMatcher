@@ -48,9 +48,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomGreen = randomNumber()
         let randomBlue = randomNumber()
         
-        randomRedRounded = (ceil(randomRed * 4) / 4)
-        randomGreenRounded = (ceil(randomGreen * 4) / 4)
-        randomBlueRounded = (ceil(randomBlue * 4) / 4)
+        randomRedRounded = (ceil(randomRed * 3) / 3)
+        randomGreenRounded = (ceil(randomGreen * 3) / 3)
+        randomBlueRounded = (ceil(randomBlue * 3) / 3)
         //        print(randomRed!)
         //        print(randomRedRounded)
         //        print(randomGreen!)
@@ -149,9 +149,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let greenColor = ((g + 1) / 2)
         let blueColor = ((b + 1) / 2)
         
-        let redColorRounder = (ceil(redColor * 4) / 4)
-        let greenColorRounder = (ceil(greenColor * 4) / 4)
-        let blueColorRounder = (ceil(blueColor * 4) / 4)
+        let redColorRounder = (ceil(redColor * 3) / 3)
+        let greenColorRounder = (ceil(greenColor * 3) / 3)
+        let blueColorRounder = (ceil(blueColor * 3) / 3)
         
 //        print(redColor)
 //        print(redColorRounder)
