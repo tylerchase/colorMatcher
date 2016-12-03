@@ -20,7 +20,19 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                scene.backgroundColor = randomBackgroundColor()
+//                
+//                let bgcolor = randomBackgroundColor()
+                
+//                let sceneColor: [String: UIColor] = ["bgcolor": bgcolor]
+//                let notificationIdentifier:String = "SavedBackGroundColor"
+                
+//                NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
+
+                
+//                NotificationCenter.default.post(name: NSNotification.Name(notificationIdentifier), object: nil, userInfo: sceneColor)
+//                print(bgcolor)
+//                print(sceneColor)
+//                scene.backgroundColor = bgcolor
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -35,34 +47,41 @@ class GameViewController: UIViewController {
     func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
-    var randomRed: CGFloat? = nil
-    var randomGreen: CGFloat? = nil
-    var randomBlue: CGFloat? = nil
+    
+    var randomRedRounded: CGFloat? = nil
+    var randomGreenRounded: CGFloat? = nil
+    var randomBlueRounded: CGFloat? = nil
+    
+    var startColored: UIColor? = nil
     
     func randomBackgroundColor() -> UIColor {
-        randomRed = random()
-        randomGreen = random()
-        randomBlue = random()
+        let randomRed = random()
+        let randomGreen = random()
+        let randomBlue = random()
         
-        let randomRedRounded = (ceil(randomRed! * 8) / 8)
-        let randomGreenRounded = (ceil(randomGreen! * 8) / 8)
-        let randomBlueRounded = (ceil(randomBlue! * 8) / 8)
+        randomRedRounded = (ceil(randomRed * 4) / 4)
+        randomGreenRounded = (ceil(randomGreen * 4) / 4)
+        randomBlueRounded = (ceil(randomBlue * 4) / 4)
 //        print(randomRed!)
 //        print(randomRedRounded)
 //        print(randomGreen!)
 //        print(randomGreenRounded)
 //        print(randomBlue!)
-        print(randomBlueRounded)
-        print(blueColorRounder)
+//        print(randomBlueRounded!)
         
+//        isColorTheSame()
+
         
-        return UIColor(red:   randomRedRounded,
-                       green: randomGreenRounded,
-                       blue:  randomBlueRounded,
+         let startColor =  UIColor(red:   randomRedRounded!,
+                       green: randomGreenRounded!,
+                       blue:  randomBlueRounded!,
                        alpha: 1.0)
         
+         startColored = startColor
+        
+        return startColor
     }
-    
+
 
     override var shouldAutorotate: Bool {
         return true
