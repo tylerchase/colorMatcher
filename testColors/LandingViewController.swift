@@ -10,10 +10,23 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    
+    @IBOutlet var highscoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let newscore = highScore()
+        self.highscoreLabel.text = "High score: \(newscore)"
+        print(newscore)
         // Do any additional setup after loading the view.
+    }
+    
+    func highScore() -> Int {
+        return UserDefaults.standard.integer(forKey: "userScore")
+    }
+    
+    func resetHighScore () {
+        UserDefaults.standard.removeObject(forKey: "userScore")
     }
 
     override func didReceiveMemoryWarning() {

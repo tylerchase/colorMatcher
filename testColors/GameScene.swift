@@ -20,7 +20,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: Int = 0
 
     var timerLabel : SKLabelNode!
-    var timer: Int = 20
+    var timer: Int = 10
+    let zero: Int = 0
     
     let manager = CMMotionManager()
     var changingColorNode = SKSpriteNode()
@@ -32,16 +33,60 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var calibratedAcceleration = CMAcceleration()
     
     override func didMove(to view: SKView) {
-        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel = SKLabelNode(fontNamed: "Avenir-Medium")
         scoreLabel.text = "Score: \(score)"
+        scoreLabel.fontColor = .black
+        scoreLabel.fontSize = 60
         scoreLabel.horizontalAlignmentMode = .right
-        scoreLabel.position = CGPoint(x: 15, y:15)
+        scoreLabel.position = CGPoint(x: -105, y:585)
         scoreLabel.zPosition = 1000
         self.addChild(scoreLabel)
+        
+        timerLabel = SKLabelNode(fontNamed: "Avenir-Medium")
+        timerLabel.text = "Timer: \(timer)"
+        timerLabel.fontColor = .black
+        timerLabel.fontSize = 60
+        timerLabel.horizontalAlignmentMode = .right
+        timerLabel.position = CGPoint(x: 310, y:585)
+        timerLabel.zPosition = 1000
+        self.addChild(timerLabel)
+        
+        
         print(scoreLabel)
         setRandomBackgroundColor()
         moving()
- 
+        Timer.scheduledTimer(timeInterval: 1,
+                             target: self,
+                             selector: #selector(self.updateTime),
+                             userInfo: nil,
+                             repeats: true)
+    }
+    
+    func updateTime() {
+        if timer <= 0 {
+            endgame()
+        } else {
+            timer -= 1
+            timerLabel.text = "Timer: \(timer)"
+        }
+    }
+    
+    func endgame(){
+        saveUserScore(score: score)
+        manager.stopDeviceMotionUpdates()
+        manager.stopAccelerometerUpdates()
+        endgamePopUp()
+    }
+    
+    func endgamePopUp() {
+        let gameOver = UIView(frame: CGRect(x:50, y: 200, width: 50, height: 0))
+        gameOver.backgroundColor = .red
+        self.view?.addSubview(gameOver)
+        
+        //Call whenever you want to show it and change the size to whatever size you want
+        UIView.animate(withDuration: 0.1, animations: {
+            gameOver.frame.size = CGSize(width: 275, height: 260)
+        })
     }
     
     func randomNumber() ->CGFloat {
@@ -60,9 +105,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomGreen = randomNumber()
         let randomBlue = randomNumber()
         
-        randomRedRounded = (ceil(randomRed * 3) / 3)
-        randomGreenRounded = (ceil(randomGreen * 3) / 3)
-        randomBlueRounded = (ceil(randomBlue * 3) / 3)
+        randomRedRounded = (ceil(randomRed * 4) / 4)
+        randomGreenRounded = (ceil(randomGreen * 4) / 4)
+        randomBlueRounded = (ceil(randomBlue * 4) / 4)
         //        print(randomRed!)
         //        print(randomRedRounded)
         //        print(randomGreen!)
@@ -78,7 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                   blue:  randomBlueRounded!,
                                   alpha: 1.0)
         
-        
+        print(startColor)
         backgroundNode = childNode(withName: "backgroundNode") as! SKSpriteNode
         backgroundNodeTwo = childNode(withName: "backgroundNodeTwo") as! SKSpriteNode
         let bColor = SKAction.colorize(with: UIColor(red:randomRedRounded!,
@@ -95,7 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func moving(){
-        
+
         self.physicsWorld.contactDelegate = self
         
         self.numberFormatter.numberStyle = .decimal
@@ -131,22 +176,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let changingX = CGFloat((data!.gravity.x - self.calibratedAcceleration.x))
                 let changingY = CGFloat((data!.gravity.y - self.calibratedAcceleration.y))
                 let changingZ = CGFloat((data!.gravity.z - self.calibratedAcceleration.z))
-                
-//                var changingRed = self.numberFormatter.string(from: NSNumber(value: changingX))
-//                var changingGreen = self.numberFormatter.string(from: NSNumber(value: changingY))
-//                var changingBlue = self.numberFormatter.string(from: NSNumber(value: changingZ))
-                
-                self.setBackgroundWithCalibration(r: changingX, g: changingY, b: changingZ)
-                
-//                self.xValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.x - self.calibratedAcceleration.x)
-//                self.yValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.y - self.calibratedAcceleration.y)
-//                self.zValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.z - self.calibratedAcceleration.z)
-//                
-//                if self.functionalitySwitch.on == true {
-//                    self.setBackgroundWithCalibration()
-//                } else if self.view.backgroundColor != UIColor.whiteColor() {
-//                    self.view.backgroundColor = UIColor.whiteColor()
-//                }
+                if self.timer > self.zero {
+                   self.setBackgroundWithCalibration(r: changingX, g: changingY, b: changingZ)
+                }
             })
         }
     }
@@ -160,30 +192,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let greenColor = ((g + 1) / 2)
         let blueColor = ((b + 1) / 2)
         
-        let redColorRounder = (ceil(redColor * 3) / 3)
-        let greenColorRounder = (ceil(greenColor * 3) / 3)
-        let blueColorRounder = (ceil(blueColor * 3) / 3)
+        let redColorRounder = (ceil(redColor * 4) / 4)
+        let greenColorRounder = (ceil(greenColor * 4) / 4)
+        let blueColorRounder = (ceil(blueColor * 4) / 4)
 
-        let color = SKAction.colorize(with: UIColor(red:redColorRounder,
-                                                    green: greenColorRounder,
-                                                    blue: blueColorRounder,
-                                                    alpha: 1),
-                                      colorBlendFactor: 0.0, duration: 0.1)
+            let color = SKAction.colorize(with: UIColor(red:redColorRounder,
+                                                        green: greenColorRounder,
+                                                        blue: blueColorRounder,
+                                                        alpha: 1),
+                                          colorBlendFactor: 0.0, duration: 0.1)
+            
+            changingColorNode.run(color)
+            
+            
+            changingColor =  UIColor(red:   redColorRounder,
+                                     green: greenColorRounder,
+                                     blue:  blueColorRounder,
+                                     alpha: 1.0)
+            
+            
+            checkIfSame(changingNodeColor: changingColor)
 
-        changingColorNode.run(color)
-        
-        
-        changingColor =  UIColor(red:   redColorRounder,
-                       green: greenColorRounder,
-                       blue:  blueColorRounder,
-                       alpha: 1.0)
-
-        
-        checkIfSame(changingNodeColor: changingColor)
         return changingColor
-
-        }
+    }
     
+    func saveUserScore(score:Int){
+        UserDefaults.standard.set(score, forKey: "userScore")
+    }
 
     
     func checkIfSame(changingNodeColor: UIColor){
@@ -193,7 +228,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("FUCK YEEEAAAHHHHHHHHHHHHH")
             score += 1
             scoreLabel.text = "Score: \(score)"
+
+            timer += 5
+            timerLabel.text = "Timer: \(timer)"
+            
 //            incrementScore(score: score)
+            
             setRandomBackgroundColor()
             
         }
@@ -204,12 +244,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
 
-    
-    func doSomething(notification: Notification) {
-        let newColor:UIColor = notification.userInfo!["bgcolor"] as! UIColor
-        print("NEW COLOR")
-        print(newColor)
-    }
+//    
+//    func doSomething(notification: Notification) {
+//        let newColor:UIColor = notification.userInfo!["bgcolor"] as! UIColor
+//        print("NEW COLOR")
+//        print(newColor)
+//    }
     
 
     

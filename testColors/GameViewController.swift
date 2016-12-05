@@ -12,31 +12,16 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-
    
         override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-//                
-//                let bgcolor = randomBackgroundColor()
-                
-//                let sceneColor: [String: UIColor] = ["bgcolor": bgcolor]
-//                let notificationIdentifier:String = "SavedBackGroundColor"
-                
-//                NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
-
-                
-//                NotificationCenter.default.post(name: NSNotification.Name(notificationIdentifier), object: nil, userInfo: sceneColor)
-//                print(bgcolor)
-//                print(sceneColor)
-//                scene.backgroundColor = bgcolor
+            
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -47,6 +32,8 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
+    
+       
     
     func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
@@ -66,15 +53,6 @@ class GameViewController: UIViewController {
         randomRedRounded = (ceil(randomRed * 4) / 4)
         randomGreenRounded = (ceil(randomGreen * 4) / 4)
         randomBlueRounded = (ceil(randomBlue * 4) / 4)
-//        print(randomRed!)
-//        print(randomRedRounded)
-//        print(randomGreen!)
-//        print(randomGreenRounded)
-//        print(randomBlue!)
-//        print(randomBlueRounded!)
-        
-//        isColorTheSame()
-
         
          let startColor =  UIColor(red:   randomRedRounded!,
                        green: randomGreenRounded!,
