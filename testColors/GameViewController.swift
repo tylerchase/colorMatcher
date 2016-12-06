@@ -15,7 +15,8 @@ class GameViewController: UIViewController {
    
         override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let onSelectedSkin = Notification.Name("on-sekected-skin")
+        NotificationCenter.default.addObserver(self, selector: #selector(goHomeView), name: onSelectedSkin, object: nil)
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
@@ -28,8 +29,8 @@ class GameViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
         }
     }
     
@@ -62,6 +63,10 @@ class GameViewController: UIViewController {
          startColored = startColor
         
         return startColor
+    }
+    
+    func goHomeView() {
+        self.performSegue(withIdentifier: "goHome", sender: self)
     }
 
 

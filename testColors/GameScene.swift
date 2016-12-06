@@ -11,8 +11,8 @@ import GameplayKit
 import CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var viewController: GameViewController!
     
-
     
     private var label : SKLabelNode?
     
@@ -78,15 +78,81 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endgamePopUp()
     }
     
+    let gameOver = UIView(frame: CGRect(x:50, y: 200, width: 50, height: 0))
+    let btn: UIButton = UIButton(frame: CGRect(x: 0, y:220, width: 275, height: 50))
+    let goHomebtn: UIButton = UIButton(frame: CGRect(x: 0, y:170, width: 275, height: 50))
+    
+
     func endgamePopUp() {
-        let gameOver = UIView(frame: CGRect(x:50, y: 200, width: 50, height: 0))
-        gameOver.backgroundColor = .red
+        gameOver.backgroundColor = .gray
+        gameOver.layer.cornerRadius = 10.0
         self.view?.addSubview(gameOver)
         
-        //Call whenever you want to show it and change the size to whatever size you want
-        UIView.animate(withDuration: 0.1, animations: {
-            gameOver.frame.size = CGSize(width: 275, height: 260)
+        // Call whenever you want to show it and change the size to whatever size you want
+        UIView.animate(withDuration: 0.05, animations: {
+            self.gameOver.frame.size = CGSize(width: 275, height: 260)
         })
+        if self.gameOver.isHidden == true || self.btn.isHidden == true {
+            self.gameOver.isHidden = false
+            self.btn.isHidden = false
+        }
+        
+
+        goHomebtn.backgroundColor = UIColor.black
+        goHomebtn.setTitle("Go Home", for: .normal)
+        goHomebtn.titleLabel?.font = UIFont(name: "Avenir Medium", size: 22)!
+        goHomebtn.addTarget(self, action: #selector(goHome), for: .touchUpInside)
+        goHomebtn.tag = 1
+        goHomebtn.layer.cornerRadius = 10.0
+        gameOver.addSubview(goHomebtn)
+        btn.backgroundColor = UIColor.green
+        btn.setTitle("Play Again", for: .normal)
+        
+        btn.titleLabel?.font = UIFont(name: "Avenir Medium", size: 22)!
+        btn.titleLabel?.textColor = UIColor.black
+        btn.addTarget(self, action: #selector(popUpPlayAgain), for: .touchUpInside)
+        btn.tag = 1
+        btn.layer.cornerRadius = 10.0
+        gameOver.addSubview(btn)
+    }
+        
+    let onSelectedSkin = Notification.Name("on-sekected-skin")
+    
+    func goHome (sender: UIButton!){
+//        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as UIViewController
+//        self.navigationController?.pushViewController(viewController, animated: false, completion: nil)
+        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
+////        self.presentViewController(nextViewController, animated:true, completion:nil)
+//        self.present(nextViewController, true, nil)
+//        
+//        let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "LandingViewController") as! GameScene
+//        self.pushViewController(vc, animated:true)
+        
+//        self.performSegue(withIdentifier: "goHome", sender: self)
+        
+        NotificationCenter.default.post(name: onSelectedSkin, object: nil)
+
+        
+    }
+    
+    func popUpPlayAgain(sender:UIButton!){
+        print("playing again")
+        self.gameOver.isHidden = true
+        self.btn.alpha = 1
+        self.btn.isHidden = true
+        self.score = 0
+        scoreLabel.text = "Score: \(score)"
+        
+        setRandomBackgroundColor()
+        resetTimer()
+        moving()
+    }
+    
+    func resetTimer(){
+        timer = 3 + 1
     }
     
     func randomNumber() ->CGFloat {
@@ -105,9 +171,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomGreen = randomNumber()
         let randomBlue = randomNumber()
         
-        randomRedRounded = (ceil(randomRed * 4) / 4)
-        randomGreenRounded = (ceil(randomGreen * 4) / 4)
-        randomBlueRounded = (ceil(randomBlue * 4) / 4)
+        randomRedRounded = (ceil(randomRed * 3) / 3)
+        randomGreenRounded = (ceil(randomGreen * 3) / 3)
+        randomBlueRounded = (ceil(randomBlue * 3) / 3)
         //        print(randomRed!)
         //        print(randomRedRounded)
         //        print(randomGreen!)
@@ -122,7 +188,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                   green: randomGreenRounded!,
                                   blue:  randomBlueRounded!,
                                   alpha: 1.0)
+        print(randomRedRounded!)
+        print(randomGreenRounded!)
+        print(randomBlueRounded!)
         
+        if randomRedRounded! == 1 && randomGreenRounded! == 1 && randomBlueRounded! == 1 {
+            setRandomBackgroundColor()
+        }
         print(startColor)
         backgroundNode = childNode(withName: "backgroundNode") as! SKSpriteNode
         backgroundNodeTwo = childNode(withName: "backgroundNodeTwo") as! SKSpriteNode
@@ -149,7 +221,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         changingColorNode = childNode(withName: "changingColorNode") as! SKSpriteNode
         
         manager.startAccelerometerUpdates()
-        manager.accelerometerUpdateInterval = 0.3
+        manager.accelerometerUpdateInterval = 0.1
         manager.startAccelerometerUpdates(to: OperationQueue.main){
             (data, error) in
             
@@ -168,7 +240,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setUpDeviceMotionMonitoring() {
         
         if self.motionManager.isDeviceMotionAvailable {
-            self.motionManager.deviceMotionUpdateInterval = 0.2
+            self.motionManager.deviceMotionUpdateInterval = 0.1
             self.motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: {
                 (data, error) -> Void in
                 
@@ -192,9 +264,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let greenColor = ((g + 1) / 2)
         let blueColor = ((b + 1) / 2)
         
-        let redColorRounder = (ceil(redColor * 4) / 4)
-        let greenColorRounder = (ceil(greenColor * 4) / 4)
-        let blueColorRounder = (ceil(blueColor * 4) / 4)
+        let redColorRounder = (ceil(redColor * 3) / 3)
+        let greenColorRounder = (ceil(greenColor * 3) / 3)
+        let blueColorRounder = (ceil(blueColor * 3) / 3)
 
             let color = SKAction.colorize(with: UIColor(red:redColorRounder,
                                                         green: greenColorRounder,
@@ -217,7 +289,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func saveUserScore(score:Int){
-        UserDefaults.standard.set(score, forKey: "userScore")
+        
+        if let highscore: Int = UserDefaults.standard.integer(forKey: "userScore"){
+            if highscore < score {
+                UserDefaults.standard.set(score, forKey: "userScore")
+            }
+        }
+        
     }
 
     
@@ -241,16 +319,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("test")
 
     }
-    
-    
-
-//    
-//    func doSomething(notification: Notification) {
-//        let newColor:UIColor = notification.userInfo!["bgcolor"] as! UIColor
-//        print("NEW COLOR")
-//        print(newColor)
-//    }
-    
 
     
 //    override func update(_ currentTime: TimeInterval) {
