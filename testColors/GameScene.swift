@@ -9,10 +9,11 @@
 import SpriteKit
 import GameplayKit
 import CoreMotion
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var viewController: GameViewController!
-    
+    var audioPlayer = AVAudioPlayer()
     
     private var label : SKLabelNode?
     
@@ -20,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: Int = 0
 
     var timerLabel : SKLabelNode!
-    var timer: Int = 10
+    var timer: Int = 30
     let zero: Int = 0
     
     let manager = CMMotionManager()
@@ -79,6 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     let gameOver = UIView(frame: CGRect(x:50, y: 200, width: 50, height: 0))
+    let gameOverScoreLabel = UILabel(frame: CGRect(x:40, y:10, width: 195, height: 150))
     let btn: UIButton = UIButton(frame: CGRect(x: 0, y:220, width: 275, height: 50))
     let goHomebtn: UIButton = UIButton(frame: CGRect(x: 0, y:170, width: 275, height: 50))
     
@@ -97,6 +99,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.btn.isHidden = false
         }
         
+        
+        
 
         goHomebtn.backgroundColor = UIColor.black
         goHomebtn.setTitle("Go Home", for: .normal)
@@ -114,6 +118,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         btn.tag = 1
         btn.layer.cornerRadius = 10.0
         gameOver.addSubview(btn)
+        
+        gameOverScoreLabel.text = "\(score)"
+        gameOverScoreLabel.font = UIFont(name: "Avenir Medium", size: 150)!
+        gameOverScoreLabel.textColor = UIColor.white
+        gameOverScoreLabel.textAlignment = NSTextAlignment.center
+//        gameOverScoreLabel.setTitle("\(score)", for: .normal)
+//        gameOverScoreLabel.titleLabel?.font = UIFont(name: "Avenir Medium", size: 50)!
+//        gameOverScoreLabel.tag = 1
+//        gameOverScoreLabel.titleLabel?.textColor = UIColor.white
+        gameOver.addSubview(gameOverScoreLabel)
     }
         
     let onSelectedSkin = Notification.Name("on-sekected-skin")
@@ -311,13 +325,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timerLabel.text = "Timer: \(timer)"
             
 //            incrementScore(score: score)
-            
+            playAudio()
             setRandomBackgroundColor()
             
         }
 
         print("test")
 
+    }
+    
+    func playAudio() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "button-27", ofType:"mp3")!))
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }
+        catch {
+            print(error)
+        }
     }
 
     
