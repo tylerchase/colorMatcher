@@ -21,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: Int = 0
 
     var timerLabel : SKLabelNode!
-    var timer: Int = 30
+    var timer: Int = 15
     let zero: Int = 0
     
     let manager = CMMotionManager()
@@ -166,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func resetTimer(){
-        timer = 3 + 1
+        timer = 15 + 1
     }
     
     func randomNumber() ->CGFloat {
