@@ -18,6 +18,7 @@
 		2F0D6F0A1DF0ADC600206427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0D6F081DF0ADC600206427 /* Main.storyboard */; };
 		2F0D6F0C1DF0ADC600206427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0D6F0B1DF0ADC600206427 /* Assets.xcassets */; };
 		2F0D6F0F1DF0ADC600206427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0D6F0D1DF0ADC600206427 /* LaunchScreen.storyboard */; };
+		2F8C8C501E00567500CB3650 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C8C4F1E00567500CB3650 /* InstructionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2F0D6F0B1DF0ADC600206427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F0D6F0E1DF0ADC600206427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F0D6F101DF0ADC600206427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F8C8C4F1E00567500CB3650 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				2F0D6F061DF0ADC600206427 /* GameViewController.swift */,
 				2F099B9A1DF77AE8001E83CA /* Noises */,
 				2F0D6F081DF0ADC600206427 /* Main.storyboard */,
+				2F8C8C4F1E00567500CB3650 /* InstructionsViewController.swift */,
 				2F099B981DF31E09001E83CA /* LandingViewController.swift */,
 				2F0D6F0B1DF0ADC600206427 /* Assets.xcassets */,
 				2F0D6F0D1DF0ADC600206427 /* LaunchScreen.storyboard */,
@@ -171,6 +174,7 @@
 				2F0D6F071DF0ADC600206427 /* GameViewController.swift in Sources */,
 				2F099B991DF31E09001E83CA /* LandingViewController.swift in Sources */,
 				2F0D6EFF1DF0ADC500206427 /* AppDelegate.swift in Sources */,
+				2F8C8C501E00567500CB3650 /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
