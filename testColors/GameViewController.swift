@@ -12,17 +12,32 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var playAgainButton: UIButton!
    
-        override func viewDidLoad() {
+    @IBOutlet weak var goHomeButton: UIButton!
+    @IBOutlet weak var gameOverScoreLabel: UILabel!
+    @IBOutlet weak var menuAlertView: UIView!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         let onSelectedSkin = Notification.Name("on-sekected-skin")
         NotificationCenter.default.addObserver(self, selector: #selector(goHomeView), name: onSelectedSkin, object: nil)
+        
+        
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
             
+                
+                // Set the popup properties
+                scene.gameOver = menuAlertView
+                scene.gameOverScoreLabel = gameOverScoreLabel
+                scene.btn = playAgainButton
+                scene.goHomebtn = goHomeButton
+                
                 // Present the scene
                 view.presentScene(scene)
             }

@@ -25,7 +25,7 @@
 		2F099B981DF31E09001E83CA /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		2F099B9B1DF77B39001E83CA /* button-41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-41.mp3"; sourceTree = "<group>"; };
 		2F099B9D1DF77D68001E83CA /* button-27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-27.mp3"; sourceTree = "<group>"; };
-		2F0D6EFB1DF0ADC500206427 /* testColors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testColors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0D6EFB1DF0ADC500206427 /* Color Matcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Matcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0D6EFE1DF0ADC500206427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F0D6F001DF0ADC600206427 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		2F0D6F021DF0ADC600206427 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		2F0D6EFC1DF0ADC500206427 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F0D6EFB1DF0ADC500206427 /* testColors.app */,
+				2F0D6EFB1DF0ADC500206427 /* Color Matcher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +96,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F0D6EFA1DF0ADC500206427 /* testColors */ = {
+		2F0D6EFA1DF0ADC500206427 /* Color Matcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F0D6F131DF0ADC600206427 /* Build configuration list for PBXNativeTarget "testColors" */;
+			buildConfigurationList = 2F0D6F131DF0ADC600206427 /* Build configuration list for PBXNativeTarget "Color Matcher" */;
 			buildPhases = (
 				2F0D6EF71DF0ADC500206427 /* Sources */,
 				2F0D6EF81DF0ADC500206427 /* Frameworks */,
@@ -108,9 +108,9 @@
 			);
 			dependencies = (
 			);
-			name = testColors;
+			name = "Color Matcher";
 			productName = testColors;
-			productReference = 2F0D6EFB1DF0ADC500206427 /* testColors.app */;
+			productReference = 2F0D6EFB1DF0ADC500206427 /* Color Matcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F0D6EF61DF0ADC500206427 /* Build configuration list for PBXProject "testColors" */;
+			buildConfigurationList = 2F0D6EF61DF0ADC500206427 /* Build configuration list for PBXProject "Color Matcher" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F0D6EFA1DF0ADC500206427 /* testColors */,
+				2F0D6EFA1DF0ADC500206427 /* Color Matcher */,
 			);
 		};
 /* End PBXProject section */
@@ -240,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -284,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -299,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 234J2CGTZW;
 				INFOPLIST_FILE = testColors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.testColors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +313,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 234J2CGTZW;
 				INFOPLIST_FILE = testColors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.testColors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -322,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F0D6EF61DF0ADC500206427 /* Build configuration list for PBXProject "testColors" */ = {
+		2F0D6EF61DF0ADC500206427 /* Build configuration list for PBXProject "Color Matcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F0D6F111DF0ADC600206427 /* Debug */,
@@ -331,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F0D6F131DF0ADC600206427 /* Build configuration list for PBXNativeTarget "testColors" */ = {
+		2F0D6F131DF0ADC600206427 /* Build configuration list for PBXNativeTarget "Color Matcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F0D6F141DF0ADC600206427 /* Debug */,

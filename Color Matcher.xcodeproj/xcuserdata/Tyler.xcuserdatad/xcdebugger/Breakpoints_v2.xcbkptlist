@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testColors/GameScene.swift"
-            timestampString = "502758393.979493"
+            timestampString = "503513624.89253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "checkIfSame(changingNodeColor:)"
             landmarkType = "7">
          </BreakpointContent>

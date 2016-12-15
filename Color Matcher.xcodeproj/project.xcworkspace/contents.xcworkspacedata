@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:testColors.xcodeproj">
+      location = "self:/Users/Tyler/Desktop/swift/testColors/Color Matcher.xcodeproj">
    </FileRef>
 </Workspace>
