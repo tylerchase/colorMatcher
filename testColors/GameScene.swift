@@ -99,12 +99,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        goHomebtn.layer.shadowColor = UIColor.black.cgColor
-        goHomebtn.layer.shadowRadius = 5.0
+        btn.backgroundColor = .clear
+        btn.layer.cornerRadius = 10
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.white.cgColor
+        btn.titleLabel?.textColor = UIColor.black
+        btn.layer.backgroundColor = UIColor.green.cgColor
         
+        goHomebtn.backgroundColor = .clear
+        goHomebtn.layer.cornerRadius = 10
+        goHomebtn.layer.borderWidth = 1
+        goHomebtn.layer.borderColor = UIColor.white.cgColor
+        goHomebtn.layer.backgroundColor = UIColor.black.cgColor
         
-        btn.layer.shadowColor = UIColor.black.cgColor
-        btn.layer.shadowRadius = 5.0
+//        goHomebtn.layer.shadowColor = UIColor.black.cgColor
+//        goHomebtn.layer.shadowRadius = 5.0
+//        
+//        
+//        btn.layer.shadowColor = UIColor.black.cgColor
+//        btn.layer.shadowRadius = 5.0
 //        goHomebtn.layer.
 
 //        goHomebtn.backgroundColor = UIColor.black
@@ -121,40 +134,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        btn.titleLabel?.textColor = UIColor.black
         btn.addTarget(self, action: #selector(popUpPlayAgain), for: .touchUpInside)
         btn.tag = 1
-//        btn.layer.cornerRadius = 10.0
-//        gameOver.addSubview(btn)
-        
         gameOverScoreLabel.text = "\(score)"
-//        gameOverScoreLabel.font = UIFont(name: "Avenir Medium", size: 150)!
-//        gameOverScoreLabel.textColor = UIColor.white
-//        gameOverScoreLabel.textAlignment = NSTextAlignment.center
-//        gameOverScoreLabel.setTitle("\(score)", for: .normal)
-//        gameOverScoreLabel.titleLabel?.font = UIFont(name: "Avenir Medium", size: 50)!
-//        gameOverScoreLabel.tag = 1
-//        gameOverScoreLabel.titleLabel?.textColor = UIColor.white
-//        gameOver.addSubview(gameOverScoreLabel)
+
     }
         
     let onSelectedSkin = Notification.Name("on-sekected-skin")
     
     func goHome (sender: UIButton!){
-//        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as UIViewController
-//        self.navigationController?.pushViewController(viewController, animated: false, completion: nil)
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
-////        self.presentViewController(nextViewController, animated:true, completion:nil)
-//        self.present(nextViewController, true, nil)
-//        
-//        let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "LandingViewController") as! GameScene
-//        self.pushViewController(vc, animated:true)
-        
-//        self.performSegue(withIdentifier: "goHome", sender: self)
-        
         NotificationCenter.default.post(name: onSelectedSkin, object: nil)
-
-        
     }
     
     func popUpPlayAgain(sender:UIButton!){
@@ -193,14 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         randomRedRounded = (ceil(randomRed * 3) / 3)
         randomGreenRounded = (ceil(randomGreen * 3) / 3)
         randomBlueRounded = (ceil(randomBlue * 3) / 3)
-        //        print(randomRed!)
-        //        print(randomRedRounded)
-        //        print(randomGreen!)
-        //        print(randomGreenRounded)
-        //        print(randomBlue!)
-        //        print(randomBlueRounded!)
-        
-        //        isColorTheSame()
+
         
         
         let startColor =  UIColor(red:   randomRedRounded!,

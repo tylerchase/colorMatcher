@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpX-Dt-KJc">
-                                <rect key="frame" x="32.5" y="140" width="255.5" height="119"/>
+                                <rect key="frame" x="32.5" y="100" width="255.5" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="119" id="Nex-nM-sGO"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oA4-kb-Lhw">
-                                <rect key="frame" x="30" y="383" width="260" height="90"/>
+                                <rect key="frame" x="30" y="343" width="260" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="aon-6I-P9m"/>
                                 </constraints>
@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-AR-A9I">
-                                <rect key="frame" x="30" y="279" width="260" height="84"/>
+                                <rect key="frame" x="30" y="239" width="260" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="IY7-uQ-K3t"/>
                                     <constraint firstAttribute="width" constant="260" id="zAG-X1-NXm"/>
@@ -78,7 +78,7 @@
                         <constraints>
                             <constraint firstItem="rpX-Dt-KJc" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="7D8-wM-Sqt"/>
                             <constraint firstItem="oA4-kb-Lhw" firstAttribute="top" secondItem="g2s-AR-A9I" secondAttribute="bottom" constant="20" id="8Lj-fE-hGM"/>
-                            <constraint firstItem="rpX-Dt-KJc" firstAttribute="top" secondItem="qPQ-YS-Q7x" secondAttribute="bottom" id="NFP-OU-iCd"/>
+                            <constraint firstItem="rpX-Dt-KJc" firstAttribute="top" secondItem="qPQ-YS-Q7x" secondAttribute="bottom" constant="-40" id="NFP-OU-iCd"/>
                             <constraint firstItem="HhY-wc-9h6" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="PmQ-LU-ndb"/>
                             <constraint firstItem="qPQ-YS-Q7x" firstAttribute="top" secondItem="bzq-v8-3v5" secondAttribute="bottom" constant="20" id="YWn-Pq-fWP"/>
                             <constraint firstItem="g2s-AR-A9I" firstAttribute="top" secondItem="rpX-Dt-KJc" secondAttribute="bottom" constant="20" id="Yso-kO-ivn"/>
@@ -281,13 +281,13 @@
                                 <rect key="frame" x="40" y="174.5" width="240" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svw-wu-UdV">
-                                        <rect key="frame" x="67.5" y="137" width="105" height="43"/>
+                                        <rect key="frame" x="0.0" y="136" width="240" height="43"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Play Again"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ej-Ud-RHQ">
-                                        <rect key="frame" x="71.5" y="180" width="97" height="43"/>
+                                        <rect key="frame" x="0.0" y="179" width="240" height="43"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Go Home"/>
@@ -303,12 +303,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="0tc-rs-XJ5"/>
+                                    <constraint firstItem="Svw-wu-UdV" firstAttribute="width" secondItem="cvy-fN-cV0" secondAttribute="width" id="Gk7-KR-KuG"/>
                                     <constraint firstItem="3cX-Wk-zsh" firstAttribute="centerX" secondItem="cvy-fN-cV0" secondAttribute="centerX" id="H40-zQ-P5Z"/>
                                     <constraint firstItem="3cX-Wk-zsh" firstAttribute="top" secondItem="cvy-fN-cV0" secondAttribute="top" id="HDs-zL-Y1u"/>
                                     <constraint firstAttribute="height" constant="220" id="J6P-3w-qQk"/>
                                     <constraint firstItem="9Ej-Ud-RHQ" firstAttribute="top" secondItem="Svw-wu-UdV" secondAttribute="bottom" id="PCU-K6-ZHI"/>
+                                    <constraint firstItem="9Ej-Ud-RHQ" firstAttribute="width" secondItem="cvy-fN-cV0" secondAttribute="width" id="UAq-Qn-Woj"/>
                                     <constraint firstItem="Svw-wu-UdV" firstAttribute="centerX" secondItem="cvy-fN-cV0" secondAttribute="centerX" id="W5w-5e-AdA"/>
-                                    <constraint firstItem="Svw-wu-UdV" firstAttribute="top" secondItem="3cX-Wk-zsh" secondAttribute="bottom" id="gbi-UG-auY"/>
+                                    <constraint firstItem="Svw-wu-UdV" firstAttribute="top" secondItem="3cX-Wk-zsh" secondAttribute="bottom" constant="-1" id="gbi-UG-auY"/>
                                     <constraint firstItem="9Ej-Ud-RHQ" firstAttribute="centerX" secondItem="cvy-fN-cV0" secondAttribute="centerX" id="s1B-La-djh"/>
                                 </constraints>
                             </view>
@@ -338,6 +340,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IBd-C1-CfB"/>
+        <segue reference="IOM-cF-u8p"/>
     </inferredMetricsTieBreakers>
 </document>
