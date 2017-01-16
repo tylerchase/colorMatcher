@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="mnl-jT-W7a"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPQ-YS-Q7x">
-                                <rect key="frame" x="79.5" y="40" width="161" height="100"/>
+                                <rect key="frame" x="126.66666666666669" y="40" width="161" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="x4A-yD-lBi"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpX-Dt-KJc">
-                                <rect key="frame" x="32.5" y="100" width="255.5" height="119"/>
+                                <rect key="frame" x="79.333333333333314" y="100" width="255.33333333333337" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="119" id="Nex-nM-sGO"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oA4-kb-Lhw">
-                                <rect key="frame" x="30" y="343" width="260" height="90"/>
+                                <rect key="frame" x="77" y="343" width="260" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="aon-6I-P9m"/>
                                 </constraints>
@@ -54,13 +54,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhY-wc-9h6">
-                                <rect key="frame" x="16" y="517" width="103.5" height="31"/>
+                                <rect key="frame" x="20.000000000000007" y="685" width="103.66666666666669" height="31"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-AR-A9I">
-                                <rect key="frame" x="30" y="239" width="260" height="84"/>
+                                <rect key="frame" x="77" y="239" width="260" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="IY7-uQ-K3t"/>
                                     <constraint firstAttribute="width" constant="260" id="zAG-X1-NXm"/>
@@ -110,11 +110,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ntM-dn-zDg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0vt-HX-dAN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How To Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G2-RH-qmP">
-                                <rect key="frame" x="81" y="20" width="158" height="50"/>
+                                <rect key="frame" x="128" y="20" width="158" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Pt-kA-Phv"/>
                                 </constraints>
@@ -123,41 +123,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match the color of the middle box to the outer boxes color" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlf-cB-Nhk">
-                                <rect key="frame" x="20" y="78" width="280" height="56"/>
+                                <rect key="frame" x="20" y="78" width="374" height="56"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilt your phone forewards and backwards to change the amount of green" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-eB-Yxp">
-                                <rect key="frame" x="20" y="249" width="280" height="39.5"/>
+                                <rect key="frame" x="20" y="229" width="374" height="39.333333333333314"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move your phone up and down to change the amount of blue" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htG-Hv-T4N">
-                                <rect key="frame" x="20" y="200.5" width="280" height="39.5"/>
+                                <rect key="frame" x="20" y="180.66666666666663" width="374" height="39.333333333333343"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqn-ix-DEe">
-                                <rect key="frame" x="-15" y="300.5" width="350" height="50"/>
+                                <rect key="frame" x="32" y="280.33333333333331" width="350" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GREEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-YS-3PK">
-                                        <rect key="frame" x="135" y="7" width="80" height="36.5"/>
+                                        <rect key="frame" x="135" y="7" width="80" height="36.666666666666686"/>
                                         <accessibility key="accessibilityConfiguration" identifier="greenLabel"/>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-0d-B1j">
-                                        <rect key="frame" x="110.5" y="3.5" width="16.5" height="42"/>
+                                        <rect key="frame" x="110.66666666666666" y="3.6666666666666856" width="16.333333333333343" height="42"/>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EM-uY-Ay5">
-                                        <rect key="frame" x="55" y="7" width="47.5" height="36.5"/>
+                                        <rect key="frame" x="55" y="7" width="47.666666666666657" height="36.666666666666686"/>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmW-CU-ncw">
-                                        <rect key="frame" x="247" y="7" width="61.5" height="36.5"/>
+                                        <rect key="frame" x="247.00000000000003" y="7" width="61.666666666666714" height="36.666666666666686"/>
                                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -192,13 +192,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cup-Aw-i7f">
-                                <rect key="frame" x="151.5" y="358.5" width="17" height="42"/>
+                                <rect key="frame" x="198.66666666666666" y="338.33333333333331" width="17" height="42"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR COLOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e7-km-f4c">
-                                <rect key="frame" x="78" y="408" width="164" height="43"/>
+                                <rect key="frame" x="125" y="388" width="164" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Lfd-cD-YcA"/>
                                 </constraints>
@@ -207,13 +207,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilt your phone left and right to change the amount of red" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAo-Py-uwU">
-                                <rect key="frame" x="20" y="142" width="280" height="39.5"/>
+                                <rect key="frame" x="20" y="142" width="374" height="19.666666666666657"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7E-ap-mbz">
-                                <rect key="frame" x="30" y="475" width="260" height="93"/>
+                                <rect key="frame" x="77" y="455" width="260" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="D44-sc-3ux"/>
                                     <constraint firstAttribute="height" constant="93" id="noG-m8-DTy"/>
@@ -274,11 +274,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Ys1-5s-Me3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GDS-Te-1IF" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvy-fN-cV0">
-                                <rect key="frame" x="40" y="174.5" width="240" height="220"/>
+                                <rect key="frame" x="87" y="258" width="240" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svw-wu-UdV">
                                         <rect key="frame" x="0.0" y="136" width="240" height="43"/>
@@ -337,7 +337,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="IOM-cF-u8p"/>

@@ -56,16 +56,6 @@ class InstructionsViewController: UIViewController {
                 self.setTextColorWithAnimation(r: changingXValue, g: changingYValue, b: changingZValue)
 
 
-//                self.xValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.x - self.calibratedAcceleration.x)
-//                self.yValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.y - self.calibratedAcceleration.y)
-//                self.zValueLabel.text = self.numberFormatter.stringFromNumber(data!.gravity.z - self.calibratedAcceleration.z)
-//
-//                if self.functionalitySwitch.on == true {
-//                    self.setBackgroundWithCalibration()
-//                } else if self.view.backgroundColor != UIColor.whiteColor() {
-//                    self.view.backgroundColor = UIColor.whiteColor()
-
-//                }
             })
         }
     }
@@ -76,9 +66,9 @@ class InstructionsViewController: UIViewController {
         let greenColor = ((g + 1.5) / 2)
         let blueColor = ((b + 1.85) / 2)
         
-        var zeroRed = CGFloat(0.0)
-        var zeroGreen = CGFloat(0.0)
-        var zeroBlue = CGFloat(0.0)
+        let zeroRed = CGFloat(0.0)
+        let zeroGreen = CGFloat(0.0)
+        let zeroBlue = CGFloat(0.0)
         
 
         UIView.transition(with: redLabel, duration: 0.1, options: .transitionCrossDissolve, animations: {
@@ -109,10 +99,6 @@ class InstructionsViewController: UIViewController {
                                                alpha: 1.0)
         }, completion: nil)
 
-
-//        UIView.animate(withDuration: self.motionManager.deviceMotionUpdateInterval, animations: { () -> Void in
-//            self.view.backgroundColor = UIColor(red: CGFloat(abs(self.motionManager.deviceMotion!.gravity.x)), green: CGFloat(abs(self.motionManager.deviceMotion!.gravity.y)), blue: CGFloat(abs(self.motionManager.deviceMotion!.gravity.z)), alpha: 1)
-//        })
     }
     
     
@@ -128,17 +114,5 @@ class InstructionsViewController: UIViewController {
         PlayButton.layer.borderWidth = 2
         PlayButton.layer.borderColor = UIColor.lightGray.cgColor
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

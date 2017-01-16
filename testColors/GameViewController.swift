@@ -44,42 +44,9 @@ class GameViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
             
-//            view.showsFPS = true
-//            view.showsNodeCount = true
         }
     }
-    
-       
-    
-    func random() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
-    
-    var randomRedRounded: CGFloat? = nil
-    var randomGreenRounded: CGFloat? = nil
-    var randomBlueRounded: CGFloat? = nil
-    
-    var startColored: UIColor? = nil
-    
-    func randomBackgroundColor() -> UIColor {
-        let randomRed = random()
-        let randomGreen = random()
-        let randomBlue = random()
-        
-        randomRedRounded = (ceil(randomRed * 4) / 4)
-        randomGreenRounded = (ceil(randomGreen * 4) / 4)
-        randomBlueRounded = (ceil(randomBlue * 4) / 4)
-        
-         let startColor =  UIColor(red:   randomRedRounded!,
-                       green: randomGreenRounded!,
-                       blue:  randomBlueRounded!,
-                       alpha: 1.0)
-        
-         startColored = startColor
-        
-        return startColor
-    }
-    
+
     func goHomeView() {
         self.performSegue(withIdentifier: "goHome", sender: self)
     }

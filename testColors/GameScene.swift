@@ -22,7 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: Int = 0
 
     var timerLabel : SKLabelNode!
-    var timer: Int = 2
+    var timer: Int = 15
     let zero: Int = 0
     
     let manager = CMMotionManager()
@@ -54,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(timerLabel)
         
         
-        print(scoreLabel)
+//        print(scoreLabel)
         setRandomBackgroundColor()
         moving()
         Timer.scheduledTimer(timeInterval: 1,
@@ -145,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func popUpPlayAgain(sender:UIButton!){
-        print("playing again")
+//        print("playing again")
         self.gameOver.isHidden = true
         self.btn.alpha = 1
         self.btn.isHidden = true
@@ -187,14 +187,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                   green: randomGreenRounded!,
                                   blue:  randomBlueRounded!,
                                   alpha: 1.0)
-        print(randomRedRounded!)
-        print(randomGreenRounded!)
-        print(randomBlueRounded!)
+//        print(randomRedRounded!)
+//        print(randomGreenRounded!)
+//        print(randomBlueRounded!)
         
         if randomRedRounded! == 1 && randomGreenRounded! == 1 && randomBlueRounded! == 1 {
             setRandomBackgroundColor()
         }
-        print(startColor)
+//        print(startColor)
         backgroundNode = childNode(withName: "backgroundNode") as! SKSpriteNode
         backgroundNodeTwo = childNode(withName: "backgroundNodeTwo") as! SKSpriteNode
         let bColor = SKAction.colorize(with: UIColor(red:randomRedRounded!,
@@ -232,7 +232,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func methodOfReceivedNotification(notification: Notification){
-        print("HI")
+//        print("HI")
         //Take Action on Notification
     }
     
@@ -300,8 +300,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func checkIfSame(changingNodeColor: UIColor){
         if changingNodeColor == startColored {
-            print (changingNodeColor)
-            print(startColored!)
+//            print (changingNodeColor)
+//            print(startColored!)
             
             score += 1
             scoreLabel.text = "Score: \(score)"
@@ -315,9 +315,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             setRandomBackgroundColor()
             
         }
-
-        print("test")
-
     }
     
     func playAudio() {
@@ -331,9 +328,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
 
-    
-//    override func update(_ currentTime: TimeInterval) {
-//        // Called before each frame is rendered
-//    }
+
         
 }
